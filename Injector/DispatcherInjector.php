@@ -3,8 +3,8 @@
 namespace Bazinga\Bundle\PropelEventDispatcherBundle\Injector;
 
 use Bazinga\Bundle\PropelEventDispatcherBundle\EventDispatcher\LazyEventDispatcher;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpKernel\Log\LoggerInterface;
 
 class DispatcherInjector
 {
