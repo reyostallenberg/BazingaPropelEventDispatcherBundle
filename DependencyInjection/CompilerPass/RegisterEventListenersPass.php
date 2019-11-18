@@ -38,11 +38,12 @@ class RegisterEventListenersPass implements CompilerPassInterface
 
                 $this
                     ->getDispatcherForClass($container, $attrs['class'])
-                    ->addMethodCall('addListenerService', array(
+                    ->addMethodCall('addListener', array(
                         $event['event'],
-                        array($id, $event['method']),
+                        array(new Reference($id), $event['method']),
                         $priority,
-                    ));
+                    ))
+                    ->setPublic(true);
             }
         }
 
